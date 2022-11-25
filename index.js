@@ -26,18 +26,18 @@ async function dbConnect() {
         });
 
 
-        // app.get('/allBuyers', async (req, res) => {
-        //     const query = { role: "Buyer" };
-        //     const result = await Users.find(query).toArray();
-        //     res.send(result);
-        // });
+        app.get('/allBuyers', async (req, res) => {
+            const query = { role: "Buyer" };
+            const result = await Users.find(query).toArray();
+            res.send(result);
+        });
 
 
-        // app.get('/allSellers', async (req, res) => {
-        //     const query = { role: "Seller" };
-        //     const result = await Users.find(query).toArray();
-        //     res.send(result);
-        // });
+        app.get('/allSellers', async (req, res) => {
+            const query = { role: "Seller" };
+            const result = await Users.find(query).toArray();
+            res.send(result);
+        });
 
 
         app.post('/allPhones', async (req, res) => {
