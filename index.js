@@ -52,12 +52,12 @@ async function dbConnect() {
             res.send(result);
         });
 
-        // app.get('/allPhones/:id', async (req, res) => {
-        //     const id = req.params.id
-        //     const query = { _id: ObjectId(id) }
-        //     const getSinglePhone = await AllPhones.findOne(query);
-        //     res.send(getSinglePhone)
-        // })
+        app.get('/allPhones/:id', async (req, res) => {
+            const id = req.params.id
+            const query = { _id: ObjectId(id) }
+            const getSinglePhone = await AllPhones.findOne(query);
+            res.send(getSinglePhone)
+        })
 
         // app.get('/iphone', async (req, res) => {
         //     const query = { brand: "Iphone" };
