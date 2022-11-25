@@ -59,26 +59,26 @@ async function dbConnect() {
             res.send(getSinglePhone)
         })
 
-        // app.get('/iphone', async (req, res) => {
-        //     const query = { brand: "Iphone" };
-        //     const result = await AllPhones.find(query).toArray();
-        //     res.send(result)
-        // });
-        // app.get('/lg', async (req, res) => {
-        //     const query = { brand: "LG" };
-        //     const result = await AllPhones.find(query).toArray();
-        //     res.send(result)
-        // });
-        // app.get('/mi', async (req, res) => {
-        //     const query = { brand: "MI" };
-        //     const result = await AllPhones.find(query).toArray();
-        //     res.send(result)
-        // });
-        // app.get('/onePlus', async (req, res) => {
-        //     const query = { brand: "OnePlus" };
-        //     const result = await AllPhones.find(query).toArray();
-        //     res.send(result)
-        // });
+        app.get('/iphone', async (req, res) => {
+            const query = { brand: "Iphone" };
+            const result = await AllPhones.find(query).toArray();
+            res.send(result)
+        });
+        app.get('/lg', async (req, res) => {
+            const query = { brand: "LG" };
+            const result = await AllPhones.find(query).toArray();
+            res.send(result)
+        });
+        app.get('/mi', async (req, res) => {
+            const query = { brand: "MI" };
+            const result = await AllPhones.find(query).toArray();
+            res.send(result)
+        });
+        app.get('/onePlus', async (req, res) => {
+            const query = { brand: "OnePlus" };
+            const result = await AllPhones.find(query).toArray();
+            res.send(result)
+        });
 
     }
     finally {
