@@ -47,10 +47,10 @@ async function dbConnect() {
         });
 
 
-        // app.get('/allPhones', async (req, res) => {
-        //     const result = await AllPhones.find({}).toArray();
-        //     res.send(result);
-        // });
+        app.get('/allPhones', async (req, res) => {
+            const result = await AllPhones.find({}).toArray();
+            res.send(result);
+        });
 
         // app.get('/allPhones/:id', async (req, res) => {
         //     const id = req.params.id
