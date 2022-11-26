@@ -18,10 +18,39 @@ async function dbConnect() {
 
         const AllPhones = client.db('Mobile-Store').collection('AllPhones');
         const Users = client.db('Mobile-Store').collection('users');
+        const MyOrder = client.db('Mobile-Store').collection('myOrders');
+        const AdvertiseItem = client.db('Mobile-Store').collection('advertiseItem');
+
 
         app.post('/users', async (req, res) => {
             const user = req.body;
             const result = await Users.insertOne(user);
+            res.send(result)
+        });
+
+
+        app.post('/myOrder', async (req, res) => {
+            const order = req.body;
+            const result = await MyOrder.insertOne(order);
+            res.send(result)
+        });
+
+        app.get('/myOrder/:email', async (req, res) => {
+            const email = req.params.email;
+            const result = await MyOrder.find({ email: email }).toArray();
+            res.send(result);
+        });
+
+        app.get('/myProducts/:email', async (req, res) => {
+            const email = req.params.email;
+            const result = await AllPhones.find({ email: email }).toArray();
+            res.send(result);
+        })
+
+
+        app.post('/advertise', async (req, res) => {
+            const advertise = req.body;
+            const result = await AdvertiseItem.insertOne(advertise);
             res.send(result)
         });
 
